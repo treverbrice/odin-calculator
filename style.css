@@ -1,0 +1,34 @@
+body {
+  background-color: lightgrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#chasis {
+  background-color: grey;
+  border-style: solid;
+  border-radius: 16px;
+  border-width: 8px;
+  padding: 4px;
+  height: 90vh;
+  width: 50vh;
+}
+
+#display {
+  background-color: lightgrey;
+  width: 100%;
+  height: 15%;
+}
+
+#keypad {
+  width: 100%;
+  height: 85%;
+}
+
+.calcButton {
+  width: 24%;
+  height: 18%;
+}
