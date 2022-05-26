@@ -21,6 +21,10 @@ body {
   background-color: lightgrey;
   width: 100%;
   height: 15%;
+  font-size: xx-large;
+  text-align: right;
+  padding: 2%;
+  box-sizing: border-box;
 }
 
 #keypad {
@@ -30,5 +34,29 @@ body {
 
 .calcButton {
   width: 24%;
-  height: 18%;
+  height: 16%;
+  border-radius: 100%;
+  border-style: solid;
+  margin-top: 3%;
+  font-size: x-large;
+}
+
+.numButton {
+  background-color: rgb(150, 200, 225);
+}
+
+.modifier {
+  background-color: rgb(100, 150, 200);
+}
+
+.clearButton {
+  background-color: rgb(200, 150, 175);
+}
+
+.centerButton {
+  background-color: rgb(150, 110, 175);
+}
+
+.equalButton {
+  background-color: rgb(150, 225, 200);
 }
