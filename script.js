@@ -21,14 +21,15 @@ function operate(num1, operator, num2) {
 function addDigitToDisplay() {
   const digitToAdd = +this.textContent;
   const display = document.querySelector("#display");
-  const currentNum = +display.textContent;
+  const displayText = display.querySelector(":last-child");
+  const currentNum = +displayText.textContent;
   let newNum = "";
   // if display is only a zero, replace it
   if (currentNum != 0) {
     newNum += currentNum;
   }
   newNum += digitToAdd;
-  display.textContent = newNum;
+  displayText.textContent = newNum;
 }
 
 const numButtons = document.querySelectorAll(".numButton");

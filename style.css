@@ -27,6 +27,12 @@ body {
   box-sizing: border-box;
 }
 
+#display
+:first-child {
+  font-size: large;
+  color: dimgrey;
+}
+
 #keypad {
   width: 100%;
   height: 85%;
