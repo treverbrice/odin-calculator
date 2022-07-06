@@ -55,7 +55,7 @@ function operateOnDigits() {
     savedOperator = operator;
   }
   displayText.textContent = "0";
-  savedText.textContent = (savedNum + savedOperator.textContent);
+  savedText.textContent = (savedNum + " " + savedOperator.textContent);
 }
 
 function equals() {
