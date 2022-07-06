@@ -109,6 +109,13 @@ function percent() {
   displayText.textContent = currentNum / 100;
 }
 
+function changeSign() {
+  const display = document.querySelector("#display");
+  const displayText = display.querySelector(":last-child");
+  const currentNum = +displayText.textContent;
+  displayText.textContent = -currentNum;
+}
+
 
 const numButtons = document.querySelectorAll(".numButton");
 numButtons.forEach((numButton) => {
@@ -134,3 +141,6 @@ backspaceButton.addEventListener("click", backspace);
 
 const percentButton = document.querySelector('button[name="percent"]');
 percentButton.addEventListener("click", percent);
+
+const changeSignButton = document.querySelector('button[name="changeSign"]');
+changeSignButton.addEventListener("click", changeSign);
