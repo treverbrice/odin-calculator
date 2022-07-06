@@ -18,7 +18,7 @@ function div(num1, num2) {
 }
 
 function operate(num1, operator, num2) {
-  return(operator(num1, num2));
+  return(+(operator(num1, num2).toFixed(4)));
 }
 
 function addDigitToDisplay() {
