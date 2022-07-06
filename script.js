@@ -91,6 +91,17 @@ function addDecimal() {
   }
 }
 
+function backspace() {
+  const display = document.querySelector("#display");
+  const displayText = display.querySelector(":last-child");
+  const currentNum = displayText.textContent;
+  if (currentNum.length > 1) {
+    displayText.textContent = currentNum.slice(0,-1);
+  } else {
+    displayText.textContent = "0";
+  }
+}
+
 
 const numButtons = document.querySelectorAll(".numButton");
 numButtons.forEach((numButton) => {
@@ -110,3 +121,6 @@ clearButton.addEventListener("click", clear);
 
 const decimalButton = document.querySelector('button[name="decimal"]');
 decimalButton.addEventListener("click", addDecimal);
+
+const backspaceButton = document.querySelector('button[name="backspace"]');
+backspaceButton.addEventListener("click", backspace);
