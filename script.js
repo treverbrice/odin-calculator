@@ -69,6 +69,16 @@ function equals() {
   }
 }
 
+function clear() {
+  const display = document.querySelector("#display");
+  const displayText = display.querySelector(":last-child");
+  const savedText = display.querySelector(":first-child");
+  savedNum = null;
+  savedOperator = null;
+  displayText.textContent = "0";
+  savedText.textContent = "0";
+}
+
 
 const numButtons = document.querySelectorAll(".numButton");
 numButtons.forEach((numButton) => {
@@ -82,3 +92,6 @@ operatorButtons.forEach((operator) => {
 
 const equalButton = document.querySelector(".equalButton");
 equalButton.addEventListener("click", equals);
+
+const clearButton = document.querySelector(".clearButton");
+clearButton.addEventListener("click", clear);
