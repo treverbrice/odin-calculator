@@ -25,10 +25,10 @@ function addDigitToDisplay() {
   const digitToAdd = +this.textContent;
   const display = document.querySelector("#display");
   const displayText = display.querySelector(":last-child");
-  const currentNum = +displayText.textContent;
+  const currentNum = displayText.textContent;
   let newNum = "";
-  // if display is only a zero, replace it
-  if (currentNum != 0) {
+  // if display is not a zero, keep it
+  if (currentNum != "0") {
     newNum += currentNum;
   }
   newNum += digitToAdd;
@@ -79,6 +79,15 @@ function clear() {
   savedText.textContent = "0";
 }
 
+function addDecimal() {
+  const display = document.querySelector("#display");
+  const displayText = display.querySelector(":last-child");
+  const currentNum = displayText.textContent;
+  if (!currentNum.includes('.')) {
+    displayText.textContent = currentNum + '.';
+  }
+}
+
 
 const numButtons = document.querySelectorAll(".numButton");
 numButtons.forEach((numButton) => {
@@ -95,3 +104,6 @@ equalButton.addEventListener("click", equals);
 
 const clearButton = document.querySelector(".clearButton");
 clearButton.addEventListener("click", clear);
+
+const decimalButton = document.querySelector('button[name="decimal"]');
+decimalButton.addEventListener("click", addDecimal);
