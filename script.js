@@ -102,6 +102,13 @@ function backspace() {
   }
 }
 
+function percent() {
+  const display = document.querySelector("#display");
+  const displayText = display.querySelector(":last-child");
+  const currentNum = +displayText.textContent;
+  displayText.textContent = currentNum / 100;
+}
+
 
 const numButtons = document.querySelectorAll(".numButton");
 numButtons.forEach((numButton) => {
@@ -124,3 +131,6 @@ decimalButton.addEventListener("click", addDecimal);
 
 const backspaceButton = document.querySelector('button[name="backspace"]');
 backspaceButton.addEventListener("click", backspace);
+
+const percentButton = document.querySelector('button[name="percent"]');
+percentButton.addEventListener("click", percent);
