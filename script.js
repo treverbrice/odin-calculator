@@ -43,6 +43,8 @@ function operateOnDigits() {
   const currentNum = +displayText.textContent;
   if (!savedNum) {
     savedNum = currentNum;
+  }
+  if (!savedOperator) {
     savedOperator = operator;
   } else {
     const result = operate(savedNum, window[savedOperator.name], currentNum);
@@ -51,6 +53,20 @@ function operateOnDigits() {
   }
   displayText.textContent = "0";
   savedText.textContent = (savedNum + savedOperator.textContent);
+}
+
+function equals() {
+  if (savedOperator) {
+    const display = document.querySelector("#display");
+    const displayText = display.querySelector(":last-child");
+    const savedText = display.querySelector(":first-child");
+    const currentNum = +displayText.textContent;
+    const result = operate(savedNum, window[savedOperator.name], currentNum);
+    savedNum = result;
+    savedOperator = null;
+    displayText.textContent = "0";
+    savedText.textContent = (savedNum);
+  }
 }
 
 
@@ -63,3 +79,6 @@ const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((operator) => {
   operator.addEventListener("click", operateOnDigits);
 });
+
+const equalButton = document.querySelector(".equalButton");
+equalButton.addEventListener("click", equals);
