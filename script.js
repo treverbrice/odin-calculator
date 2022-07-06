@@ -46,6 +46,9 @@ function operateOnDigits() {
   }
   if (!savedOperator) {
     savedOperator = operator;
+    if (currentNum != 0) {
+      savedNum = currentNum;
+    }
   } else {
     const result = operate(savedNum, window[savedOperator.name], currentNum);
     savedNum = result;
