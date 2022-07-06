@@ -27,8 +27,7 @@ body {
   box-sizing: border-box;
 }
 
-#display
-:first-child {
+#display :first-child {
   font-size: large;
   color: dimgrey;
 }
@@ -51,7 +50,7 @@ body {
   background-color: rgb(150, 200, 225);
 }
 
-.modifier {
+.modifier, .operator{
   background-color: rgb(100, 150, 200);
 }
 
